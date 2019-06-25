@@ -14,6 +14,8 @@ const nav = [
   { link: '/authors', title: 'Author' }];
 
 const bookRouter = require('./src/routes/bookRoutes')(nav);
+const adminRouter = require('./src/routes/adminRoutes')(nav);
+
 
 app.use(morgan('tiny'));
 // set up static directory to use for static files (css or js)
@@ -27,6 +29,7 @@ app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
 app.use('/books', bookRouter);
+app.use('/admin', adminRouter);
 
 app.get('/', (req, res) => {
   res.render('index', {
