@@ -6,3 +6,6 @@
 # System Files
 .DS_Store
 Thumbs.db
+
+# dotenv environment variables file
+.env

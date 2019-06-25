@@ -3,11 +3,27 @@ const chalk = require('chalk');
 const debug = require('debug')('app');
 const morgan = require('morgan');
 const path = require('path');
+const sql = require('mssql');
+const dotEnv = require('dotenv').config();
 
 
 // instance of express
 const app = express();
 const port = process.env.PORT || 3000;
+
+
+const config = {
+  user: process.env.AZURE_USERNAME,
+  password: process.env.AZURE_PASSWORD,
+  server: process.env.AZURE_SERVER,
+  database: process.env.AZURE_DATABASE,
+
+  options: {
+    encrypt: true
+  }
+};
+
+sql.connect(config).catch(err => debug(err));
 
 const nav = [
   { link: '/books', title: 'Book' },
