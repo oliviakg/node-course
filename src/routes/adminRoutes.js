@@ -7,12 +7,14 @@ const debug = require('debug')('app:adminRoutes');
 
 const books = [
   {
+    bookId: 656,
     title: 'Educated: A Memoir',
     genre: 'Biography',
     author: 'Tara Westover',
     read: false
   },
   {
+    bookId: 24280,
     title: 'Educated: A Memoir',
     genre: 'Biography',
     author: 'Tara Westover',
